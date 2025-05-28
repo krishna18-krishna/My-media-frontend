@@ -1,4 +1,4 @@
-const postBaseUrl = "http://localhost:8080/posts";
+const postBaseUrl = "http://localhost:8081/posts";
 
 const backButton = document.getElementById("back-button");
 

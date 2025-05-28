@@ -1,4 +1,4 @@
-const postBaseUrl = "http://localhost:8080/posts";
+const postBaseUrl = "http://localhost:8081/posts";
 
 let currentUserId = localStorage.getItem("userId");
 let currentUsername = localStorage.getItem("username");
@@ -147,7 +147,7 @@ async function submitPost() {
   console.log("Submitting post with payload:", postPayload);
 
   try {
-    const response = await fetch(`${postBaseUrl}/add`, {
+    const response = await fetch(`http://localhost:8081/posts/add`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -267,9 +267,9 @@ async function fetchAllPosts() {
       async function fetchLikes() {
         try {
           const [resCount, resStatus] = await Promise.all([
-            fetch(`http://localhost:8080/likes/count/${postId}`),
+            fetch(`http://localhost:8081/likes/count/${postId}`),
             fetch(
-              `http://localhost:8080/likes/status?userId=${userId}&postId=${postId}`
+              `http://localhost:8081/likes/status?userId=${userId}&postId=${postId}`
             ),
           ]);
 
@@ -289,7 +289,7 @@ async function fetchAllPosts() {
       async function toggleLike() {
         try {
           const res = await fetch(
-            `http://localhost:8080/likes/toggle?userId=${userId}&postId=${postId}`,
+            `http://localhost:8081/likes/toggle?userId=${userId}&postId=${postId}`,
             { method: "POST" }
           );
           const result = await res.text();
@@ -373,7 +373,7 @@ async function fetchAllPosts() {
       async function fetchComments() {
         try {
           const response = await fetch(
-            `http://localhost:8080/comments/post/${postId}`
+            `http://localhost:8081/comments/post/${postId}`
           );
           if (!response.ok) throw new Error("Failed to fetch comments");
 
@@ -428,7 +428,7 @@ async function fetchAllPosts() {
                     deleteButton.getAttribute("data-comment-id");
                   try {
                     const response = await fetch(
-                      `http://localhost:8080/comments/${commentId}`,
+                      `http://localhost:8081/comments/${commentId}`,
                       {
                         method: "DELETE",
                       }
@@ -471,7 +471,7 @@ async function fetchAllPosts() {
           };
 
           try {
-            const response = await fetch("http://localhost:8080/comments/add", {
+            const response = await fetch("http://localhost:8081/comments/add", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(commentData),
@@ -609,7 +609,7 @@ searchInput.addEventListener("input", async (e) => {
 
   try {
     const response = await fetch(
-      `http://localhost:8080/user/search?query=${encodeURIComponent(query)}`
+      `http://localhost:8081/user/search?query=${encodeURIComponent(query)}`
     );
     const users = await response.json();
 
