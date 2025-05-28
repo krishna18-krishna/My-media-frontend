@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Media</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="../assets/images/ic_logo-1.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" 
+    integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" 
+    referrerpolicy="no-referrer" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="side-up">
+            <div class="logo">
+                <div><span class="my">My</span><span class="media">media</span></div>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item" id="notifications">
+                    <i class="fa-regular fa-bell"></i>
+                    <span>Notifications</span>
+                </li>
+                <li class="nav-item" id="chatBox">
+                    <i class="fa-regular fa-envelope"></i>
+                    <span>Messages</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="side-down">
+            <div id="add-post-container">
+                <button class="btn btn-primary w-100" id="add-post-button">Add Post</button>
+            </div>
+            <div class="nav-user" id="userIcon">
+                <img src="../assets/images/profile-pic.jpg" alt="Pro file" id="userIcon">
+                <span>Profile</span>
+                <div class="nav-user-icon online">
+                    <div id="settings-menu" class="settings-menu">
+                        <a href="./profile.html">See your profile</a>
+                        <a href="#" id="logout" onclick="showLogoutAlert()">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="main-wrapper">
+        <div class="overlay1" id="overlay1" style="display: none;"></div>
+        <header class="top-bar">
+            <div class="search-box" id="search-box">
+                <img src="../assets/images/search.png" alt="Search">
+                <input type="search" placeholder="Search" id="searchInput">
+                
+            </div>
+            <div id="searchResults" class="searchResults"></div>
+            <div class="crossButton" id="crossButton">×</div>
+        </header>
+        <div class="container">
+            <div class="main-content">
+                <div class="overlay" style="display: none;"></div>
+                <div id="posts-container" class="container"></div>
+            </div>
+        </div>
+
+        <!-- Create new Post form  -->
+        <div id="post-form" class="modal" style="display:none;">
+        
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Create Post</h3>
+                    <button class="close-btn" id="close-btn">&times;</button>
+                </div>
+                <textarea id="post-content" placeholder="What's on your mind?"></textarea>
+                <div class="media-upload">
+                    <label for="post-media" class="upload-btn">
+                        Add Photo
+                    </label>
+                    <input type="file" id="post-media" multiple accept="image/*, video/*">
+                </div>
+                <div class="modal-actions">
+                    <button id="submit-post" >Post</button>
+                    <button id="cancel-post" onclick="hidePostForm()">Cancel</button>
+                </div>
+                <img id="imagePreview" src="" style="display: none;">
+            </div>
+        </div>
+    
+        
+        <div class="overlay" id="overlay" style="display: none;"></div>
+        <!-- <div class="overlay" id="overlay1" style="display: none;"></div> -->
+        <div id="logout-alert" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h3>Logout Confirmation</h3>
+                <p>Are you sure you want to logout?</p>
+                <div class="modal-actions">
+                    <button class="yes" onclick="logout()">Yes</button>
+                    <button class="no" onclick="hideLogoutAlert()">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="../js/script.js" defer></script>
+</body>
+</html>
