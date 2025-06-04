@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
       };
 
       try {
-        const res = await fetch("http://localhost:8081/user/register", {
+        const res = await fetch("https://krishna0718-mymedia-java-backend.hf.space/user/register", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(user),

@@ -1,4 +1,4 @@
-const postBaseUrl = "http://localhost:8081/posts";
+const postBaseUrl = "https://krishna0718-mymedia-java-backend.hf.space/posts";
 
 const backButton = document.getElementById("back-button");
 
