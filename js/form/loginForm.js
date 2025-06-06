@@ -68,7 +68,7 @@ loginForm.addEventListener("submit", async (event) => {
 
       setTimeout(() => {
         window.location.href = "../../pages/dashboard.html";
-      }, 1000);
+      });
     } else {
       document.getElementById("loginMsg").innerText = responseText;
     }

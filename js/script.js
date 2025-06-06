@@ -216,7 +216,7 @@ async function fetchAllPosts() {
               </div>
               <div class="postDetails">
                 <strong>${post.user_model.user_name}</strong>
-                <span class="text-muted">${dateTime.date} ${dateTime.time}</span>
+                <span class="text-muted">${dateTime.date}</span>
               </div>
             </div>
             <div class="post-options" style="margin-left: auto; position: relative;">
@@ -573,14 +573,14 @@ function formatDateTime(inputDatetime) {
     timeZone: "Asia/Kolkata",
   });
 
-  const formattedTime = date.toLocaleTimeString("en-US", {
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: true,
-    timeZone: "Asia/Kolkata",
-  });
+  // const formattedTime = date.toLocaleTimeString("en-US", {
+  //   hour: "2-digit",
+  //   minute: "2-digit",
+  //   hour24: true,
+  //   timeZone: "Asia/Kolkata",
+  // });
 
-  return { date: formattedDate, time: formattedTime };
+  return { date: formattedDate/* , time: formattedTime  */};
 }
 const searchInput = document.getElementById("searchInput");
 const overlay = document.getElementById("overlay1");

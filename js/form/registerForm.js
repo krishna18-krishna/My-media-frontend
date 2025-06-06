@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (res.ok) {
           setTimeout(() => {
             window.location.href = "../../index.html";
-          }, 1000);
+          });
         } else {
           const msg = await res.text();
           alert("Registration failed: " + msg);
