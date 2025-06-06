@@ -4,31 +4,33 @@
   <meta charset="UTF-8">
   <title>Register</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
-<body class="bg-light">
-  <div class="container mt-5">
-    <div class="card mx-auto shadow p-4" style="max-width: 500px;">
+<body>
+  <div class="d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card shadow p-4" style="max-width: 500px; width: 100%;">
       <h2 class="mb-4 text-center">Create Account</h2>
       <form id="registerForm" novalidate>
         <div class="mb-3">
-          <label for="fullName" class="form-label">Full Name</label>
-          <input type="text" class="form-control" id="fullName" required>
+          <label for="fullName" class="form-label"></label>
+          <input type="text" class="form-control" id="fullName" required placeholder="Full Name">
           <span id="fullnameError" class="text-danger"></span>
         </div>
         <div class="mb-3">
-          <label for="username" class="form-label">Username</label>
-          <input type="text" class="form-control" id="username" required>
+          <label for="username" class="form-label"></label>
+          <input type="text" class="form-control" id="username" required placeholder="Username">
           <span id="usernameError" class="text-danger"></span>
         </div>
         <div class="mb-3">
-          <label for="email" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="email" required>
+          <label for="email" class="form-label"></label>
+          <input type="email" class="form-control" id="email" required placeholder="Email address">
           <span id="emailError" class="text-danger"></span>
         </div>
-        <div class="mb-3">
-          <label for="password" class="form-label">Password</label>
-          <input type="password" class="form-control" id="password" required>
+        <div class="mb-3 position-relative">
+          <label for="password" class="form-label"></label>
+          <input type="password" class="form-control" id="password" required placeholder="Password">
+          <i class="fas fa-eye-slash password-toggle" id="passwordToggle" style="position: absolute; top: 70%; right: 10px; transform: translateY(-50%); cursor: pointer;"></i>
           <span id="passwordError" class="text-danger"></span>
         </div>
         <button type="submit" class="btn btn-success w-100">Register</button>
@@ -37,7 +39,6 @@
       <div id="registerMsg" class="mt-3 text-center"></div>
     </div>
   </div>
-
   <script type="module" src="../js/form/registerForm.js"></script>
 </body>
 </html>

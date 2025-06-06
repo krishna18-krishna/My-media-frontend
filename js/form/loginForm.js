@@ -68,7 +68,7 @@ loginForm.addEventListener("submit", async (event) => {
 
       setTimeout(() => {
         window.location.href = "../../pages/dashboard.html";
-      });
+      }, 10);
     } else {
       document.getElementById("loginMsg").innerText = responseText;
     }
@@ -77,3 +77,14 @@ loginForm.addEventListener("submit", async (event) => {
     document.getElementById("loginMsg").innerText = "Login failed. Please try again.";
   }
 });
+
+
+  const passwordInput = document.getElementById('password');
+  const toggleIcon = document.getElementById('passwordToggle');
+
+  toggleIcon.addEventListener('click', () => {
+    const isPassword = passwordInput.type === 'password';
+    passwordInput.type = isPassword ? 'text' : 'password';
+    toggleIcon.classList.toggle('fa-eye');
+    toggleIcon.classList.toggle('fa-eye-slash');
+  });

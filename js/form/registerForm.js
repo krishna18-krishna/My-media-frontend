@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (res.ok) {
           setTimeout(() => {
             window.location.href = "../../index.html";
-          });
+          }, 10);
         } else {
           const msg = await res.text();
           alert("Registration failed: " + msg);
@@ -172,3 +172,14 @@ document.addEventListener("DOMContentLoaded", () => {
   //   return false; // Default to false in case of an error
   // }
 });
+
+
+  const passwordInput = document.getElementById('password');
+  const toggleIcon = document.getElementById('passwordToggle');
+
+  toggleIcon.addEventListener('click', () => {
+    const isPassword = passwordInput.type === 'password';
+    passwordInput.type = isPassword ? 'text' : 'password';
+    toggleIcon.classList.toggle('fa-eye');
+    toggleIcon.classList.toggle('fa-eye-slash');
+  });
